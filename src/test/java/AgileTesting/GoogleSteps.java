@@ -12,12 +12,12 @@ import cucumber.api.java.en.When;
 public class GoogleSteps {
 		
 		private WebDriver driver;
-		  private String baseUrl;
+		private String baseUrl;
 		@Given("^I have entered \"([^\"]*)\" in google$")
 		public void I_have_entered_in_google(String arg1) throws Throwable {
 		    // Express the Regexp above with the code you wish you had
 		    //throw new PendingException();
-			System.setProperty("webdriver.gecko.driver", "/Downloads/geckodriver");
+			System.setProperty("webdriver.gecko.driver","C:\\Users\\Admin\\Desktop\\DevOps\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		    baseUrl = "https://www.google.co.in/";
 		    driver.get(baseUrl);
@@ -31,25 +31,26 @@ public class GoogleSteps {
 		    //throw new PendingException();
 		}
 
-		@Given("^URL for google is \"([^\"]*)\"$")
-		public void URL_for_google_is(String arg1) throws Throwable {
+		@Given("^URL for Google is \"([^\"]*)\"$")
+		public void url_for_Google_is(String arg1) throws Throwable {
 		    // Express the Regexp above with the code you wish you had
 		    //throw new PendingException();
 		}
 
-		@When("^I click on google \"([^\"]*)\" button$")
-		public void I_click_on_google_button(String arg1) throws Throwable {
+		@When("^I click on google \"([^\"]*)\"$")
+		public void i_click_on_google(String arg1) throws Throwable {
 		    // Express the Regexp above with the code you wish you had
 		    //throw new PendingException();
-			driver.findElement(By.name("btnK")).click();
+			driver.findElement(By.name("btnG")).click();
 		}
 
-		@Then("^it should display all matching result$")
-		public void it_should_display_all_matching_result() throws Throwable {
+		@Then("^Google Should display count below$")
+		public void google_Should_display_count_below() throws Throwable {
 		    // Express the Regexp above with the code you wish you had
 		    //throw new PendingException();
 			String result = driver.findElement(By.id("lst-ib")).getAttribute("value");
-			Assert.assertEquals("Naveen Kumar Singh", result);
+			Assert.assertEquals("Deepak Soni", result);
+			driver.quit();
 		}
 
 	}

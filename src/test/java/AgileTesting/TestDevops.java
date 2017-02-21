@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/resources", glue ="AgileTesting", tags="@mytest")
+@CucumberOptions(features="src/test/resources")
 public class TestDevops {
 
 }
